@@ -1,0 +1,3 @@
+# Audio Visualization Library
+
+WIP
