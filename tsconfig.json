@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "es2016",
-        "module": "commonjs",
+        "target": "ES6",
+        "module": "ESNext",
         "outDir": "./dist",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
@@ -9,5 +9,6 @@
         "skipLibCheck": true,
         "declaration": true
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*"],
+    "exclude": ["dist"]
 }
