@@ -12,10 +12,20 @@ export class AudioAnalyser {
 
         this.analyser.fftSize = 256
         this.dataArray = new Uint8Array(this.analyser.frequencyBinCount)
+
+        // Get rid of "Audio Context was not allowed to start" problem
+        audioElement.addEventListener("play", () => {
+            this.audioContext.resume()
+        })
     }
 
-    getFrequencyData() {
+    public getFrequencyData() {
         this.analyser.getByteFrequencyData(this.dataArray)
+        return this.dataArray
+    } 
+
+    public getByteTimeDomainData() {
+        this.analyser.getByteTimeDomainData(this.dataArray) 
         return this.dataArray
     }
 }
