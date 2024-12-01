@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Visualization Library</title>
-    <script src="../dist/index.js" async defer></script>
+    <title>Waveform</title>
+    <script src="../dist/index.js" type="module" async defer></script>
 </head>
 <body>
-    <h1>Example</h1>
-    <canvas id="visualizer" width="800" height="800" style="background: black"></canvas>
+    <h1>Waveform</h1>
+
+    <canvas id="canvas" width="800" height="800" style="background: black"></canvas>
+    <audio id="audio" controls src="../example.mp3"></audio>
+
+    <script type="module">
+        import { Waveform } from "../dist/index.js"
+
+        const waveform = new Waveform("#canvas", "#audio", {
+            strokeStyle: "#ff0000",
+            lineWidth: 4
+        })
+    </script>
 </body>
 </html>
