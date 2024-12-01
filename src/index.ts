@@ -1,1 +1,1 @@
-console.log("Basic typescript setup")
+export { Waveform } from "./visualizations/waveform.js"
